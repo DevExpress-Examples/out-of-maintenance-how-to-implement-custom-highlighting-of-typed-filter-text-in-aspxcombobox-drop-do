@@ -5,6 +5,9 @@
 * [Default.aspx.cs](./CS/WebSite/Default.aspx.cs) (VB: [Default.aspx.vb](./VB/WebSite/Default.aspx.vb))
 <!-- default file list end -->
 # How to implement custom highlighting of typed filter text in ASPxComboBox drop down items
+<!-- run online -->
+**[[Run Online]](https://codecentral.devexpress.com/e3356/)**
+<!-- run online end -->
 
 
 <p>This example demonstrates how to highlight filtered text typed by a user in drop down items of the ASPxComboBox control. The IncrementalFilteringMode="StartsWith" mode is emulated.</p><p><br />
