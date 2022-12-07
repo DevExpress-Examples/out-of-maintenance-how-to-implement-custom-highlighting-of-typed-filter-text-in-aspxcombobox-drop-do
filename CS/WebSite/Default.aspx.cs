@@ -7,21 +7,21 @@ using System.Configuration;
 using System.Data;
 using System.Collections;
 using System.Text.RegularExpressions;
-using DevExpress.Web.ASPxEditors;
+using DevExpress.Web;
 
 public partial class _Default : System.Web.UI.Page {
 	string conditionTemplate;
 	protected void Page_Init(object sender, EventArgs e) {
 		//combo.DataBind();
 	}
-	protected void combo_ItemRequestedByValue(object source, DevExpress.Web.ASPxEditors.ListEditItemRequestedByValueEventArgs e) {
+	protected void combo_ItemRequestedByValue(object source, DevExpress.Web.ListEditItemRequestedByValueEventArgs e) {
 		string value = e.Value == null ? String.Empty : e.Value.ToString();
 		if (e.Value != null) {
 			conditionTemplate = "WHERE [ProductID] = {0}";
 		}
 		BindComboBox(source, value, 0, 1);
 	}
-	protected void combo_ItemsRequestedByFilterCondition(object source, DevExpress.Web.ASPxEditors.ListEditItemsRequestedByFilterConditionEventArgs e) {		
+	protected void combo_ItemsRequestedByFilterCondition(object source, DevExpress.Web.ListEditItemsRequestedByFilterConditionEventArgs e) {		
 		if (!String.IsNullOrEmpty(e.Filter)) {
 			conditionTemplate = "WHERE [ProductName] like '{0}%'";
 		}

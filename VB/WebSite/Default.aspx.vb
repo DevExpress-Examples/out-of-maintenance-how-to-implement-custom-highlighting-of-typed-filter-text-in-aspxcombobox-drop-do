@@ -8,14 +8,14 @@ Imports System.Configuration
 Imports System.Data
 Imports System.Collections
 Imports System.Text.RegularExpressions
-Imports DevExpress.Web.ASPxEditors
+Imports DevExpress.Web
 
 Partial Public Class _Default
 	Inherits System.Web.UI.Page
 	Private conditionTemplate As String
 	Protected Sub Page_Init(ByVal sender As Object, ByVal e As EventArgs)
 	End Sub
-	Protected Sub combo_ItemRequestedByValue(ByVal source As Object, ByVal e As DevExpress.Web.ASPxEditors.ListEditItemRequestedByValueEventArgs)
+	Protected Sub combo_ItemRequestedByValue(ByVal source As Object, ByVal e As DevExpress.Web.ListEditItemRequestedByValueEventArgs)
 		Dim value As String
 		If e.Value IsNot Nothing Then
 			conditionTemplate = "WHERE [ProductID] = {0}"
@@ -25,7 +25,7 @@ Partial Public Class _Default
 		End If
 		BindComboBox(source, value, 0, 1)
 	End Sub
-	Protected Sub combo_ItemsRequestedByFilterCondition(ByVal source As Object, ByVal e As DevExpress.Web.ASPxEditors.ListEditItemsRequestedByFilterConditionEventArgs)
+	Protected Sub combo_ItemsRequestedByFilterCondition(ByVal source As Object, ByVal e As DevExpress.Web.ListEditItemsRequestedByFilterConditionEventArgs)
 		If (Not String.IsNullOrEmpty(e.Filter)) Then
 			conditionTemplate = "WHERE [ProductName] like '{0}%'"
 		End If
